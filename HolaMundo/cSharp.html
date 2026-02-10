@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HectorCRM - ¡Hola mundo!</title>
+		<link rel="stylesheet" href="../styles.css">
+	</head>
+	<body>
+		<header>
+				<h1 class="header-font">¡Hola mundo! El mini museo de la programación</h1>
+				<p class="p-header">Programación | Electrónica | Historia</p>
+			<div class="pestañas">
+				<div><a href="../index.html" class="pestaña">Inicio</a></div>
+				<div><a href="../sobreMi.html" class="pestaña">Sobre mí</a></div>
+				<div class="dropdown">Proyectos
+					<div class="dropdown-content">
+						<a href="pomodoro-timer.html">Pomodoro Timer</a><br>	
+						<a href="../holamundo.html">¡Hola mundo!</a><br>	
+						<a href="../odoo-easy-installer.html">Odoo easy installer</a><br>
+						<a href="../pgadmin-easy-installer.html">PgAdmin easy installer</a><br>
+						<a href="../espMeteo.html">Esp Meteo</a>
+					</div>
+				</div>
+				<div><a href="../contacto.html" class="pestaña">Contacto</a></div>
+			</div>
+		</header>
+		</p>
+		<main>
+		<div class="menu-hola-mundo">
+			<p class="titulo-menu-hola-mundo">Índice</p>
+			<ul class="entradas-hola-mundo">
+					<ul><a href="">Saga C</a>
+						<ul><a href="c.html">C, 1972</a></ul>
+						<ul><a href="c++.html">C++, 1979</a></ul>
+						<ul><a href="c#.html">C#, 2000</a></ul>
+						<ul><a href="holyC.html">C†, 2003</a></ul>
+					</ul>
+					<ul><a href="java.html">Java, 1995</a></ul>
+			</ul>
+			</div>
+    	<section class="seccion-ppl-lenguajes">
+				<article class="lenguajes">
+					<h1>El lenguaje C# o C Sharp</h1>
+					<p>
+					<b>C#</b> o <b>C Sharp</b> es un lenguaje de programación publicado en el año 2000, desarrollado por un equipo formado por Anders Hejlsberg para Microsoft, para dotar de orientación a objetos a la plataforma <b>.NET</b>.<br>
+Su sintaxis deriva de C y C++ y utiliza el modelo de objetos similar al de Java.
+Como curiosidad, el simbolo # o sharp, se traduce en notación musical como sostentido, es decir, que la nota en cuestión debe sonar un semitono más alta que su versión normal(su predecesor C++ en este caso). Es una metafora de la superioridad de C# sobre C++. Además, el simbolo # puede ser imaginado como cuatro simbolos +.
+				</p>
+				<h1>Sobre Anders Hejlsberg</h1>
+				<p>
+					<b>Anders Hejlsberg</b> nació el 2 de Diciembre de 1960 en Copenhague, Dinamarca. Estudió ingeniería en la Universidad Técnica de Dinamarca, pero no se graduó.
+Mientras estaba en la universidad, con aproximadamente 20 años, empezó a desarrollar programas para el microordenador <i>Nascom</i>, incluyendo un compilador de <b>Pascal</b> al que llamó <b>Blue Label Pascal Compiler</b>. Este proyecto lo llevo a fundar, junto a algunos amigos, <b>PolyData</b>, una pequeña empresa que comercializaba su software. Pronto reescribiría su compilador para adaptarlo a <b>CP/M</b> y <b>MS-DOS</b> y lo concedió bajo licencia a la empresa <b>Borland</b>. Junto a otras herramientas de programación su compilador pasó a convertirse en el sistema <b>Turbo Pascal</b>.
+En 1989 PolyData enfrentó dificultades comerciales y Anders se trasladó a California como ingeniero jefe en Borland, empresa en la que permaneció hasta 1996. En este periodo desarrollo más profundamente Turbo Pascal y el sustituto de este, <b>Turbo Delphi</b>.<br>
+Por su talento, Anders se convirtió en objetivo de <b>Microsoft</b>, y tras una serie de ofertas que Borland no pudo igualar, Anders abandonó a esta última y pasó a ser parte del equipo de Microsoft. Uno de sus primeros logros fue el lenguaje de programación <b>J++</b>, hoy día descontinuado.<br>
+Fue en el año 1999 cuando Anders formó un equipo con el objetivo de desarrollar un lenguaje orientado a objetos para la plataforma .NET de Microsoft. Este lenguaje sería C# o C sharp y fue publicado en el año 2000.<br>
+
+En 2012 compenzó a trabajar en un nuevo proyecto, el lenguaje de programación <b>TypeScript</b>, en el que sigue trabajando a día de hoy.<br>
+
+Anders Hejlsberg ha ganado varios premios, entre ellos:<br>
+		<ul>
+			<li>Premio a la excelencia en programación DR. Dobb's, 2001.</li>
+    	<li>Premio de Reconocimiento Técnico de Microsoft, 2007(compartido con su equipo).</li>
+		</ul>
+				</p>
+				<h1>¿Cómo se programa un ¡Hola mundo! en C#?</h1>
+				<p>
+				Vamos a hacer nuestro "Hola mundo" desde la terminal. En esta ocasion el compilador para C# no viene instalado por defecto en Fedora, quizas en Windows si al ser un lenguaje creado por Microsoft. Podemos instalarlo con el siguiente comando, segun el gestor de paquetes de cada distro:<br></p>
+					<code>
+						sudo (dnf/apt/yum/pacman) install mono
+					</code>
+					<p>
+						Con esto ya podemos programar y compilar nuestro "Hola mundo!" en C#.<br>
+A continuación crearemos un archivo de texto con extension .cs:<br></p>
+					<code>
+						nano Hola.cs
+					</code>
+					<p>
+						Y escribimos el siguiente código:<br>
+					</p>
+					<code>
+						using System;<br>
+						public class Hola {<br>
+						&nbsp; public static void Main(string[] args) {<br>
+						&nbsp;&nbsp;&nbsp;Console.WriteLine("Hola mundo!");<br>
+						&nbsp;&nbsp;}<br>
+						}
+					</code>
+					<p>
+						Ahora compilamos con msc y le damos nombre al ejecutable:
+					</p>
+					<code>
+						msc Hola.cs -o HolaMundo
+					</code>
+					<p>
+						¡Ya podemos ejecutar nuestro programa!:
+					</p>
+					<code>
+						./HolaMundo
+					</code>
+					</p>
+				</article>
+				<div>
+					<img class="imagenes-hola-mundo" src="img/Anders_Hejlsberg.jpg" alt="Anders Hejlsberg">
+					<p class="pie-foto"><small>Anders Hejlsberg</small></p>
+					<br>
+					<img class="imagenes-hola-mundo" src="img/EjecucionCSharp.png" alt="Ejecución de código .cs">
+					<p class="pie-foto"><small>Ejecución de ¡Hola mundo! en terminal</small></p>
+					<br>
+				</div>
+			</section>
+		</main>
+		</p>
+		<footer>
+				<div class="licencia">
+			  	<img src="../img/licencia.png" alt="Licencia CC BY-NC-SA">
+			  </div>
+				<div class="pie-pagina">
+					<p>Mi sitio web v1.0<br>
+					Autor: Héctor Monroy Fuertes<br>
+					Creado: 24/01/2026</p>
+			  </div>  
+			 </footer>
+	</body>
+</html>

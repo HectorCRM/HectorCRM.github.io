@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HectorCRM - Pomodoro Timer</title>
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+		<header>
+				<h1 class="header-font">Pomodoro Timer</h1>
+				<p class="p-header">Programación | Electrónica | Historia</p>
+			<div class="pestañas">
+				<div><a href="index.html" class="pestaña">Inicio</a></div>
+				<div><a href="sobreMi.html" class="pestaña">Sobre mí</a></div>
+				<div class="dropdown">Proyectos
+					<div class="dropdown-content">
+						<a href="">Pomodoro Timer</a><br>	
+						<a href="holamundo.html">¡Hola mundo!</a><br>	
+						<a href="odoo-easy-installer.html">Odoo easy installer</a><br>
+						<a href="pgadmin-easy-installer.html">PgAdmin easy installer</a><br>
+						<a href="espMeteo.html">Esp Meteo</a>
+					</div>
+				</div>
+				<div><a href="contacto.html" class="pestaña">Contacto</a></div>
+			</div>
+		</header>
+		</p>
+		<main>
+				<section class="seccion">
+					<article class="seccion">
+						<h1>Pomodoro Timer</h1>
+						<img src="img/pomodoro.png" alt="Menú principal del script">
+						<p class="pie-foto"><small>Menú principal del script.</small></p>
+						<br>
+						<h3>Origen del proyecto</h3>
+						<p class="fuente-index">Este proyecto surje de mis sesiones de estudio, en las que al llevar ya varias horas estudiando empieza a perderse la concentración y el foco. Así fue como descubrí el método Pomodoro, al buscar tecnicas que permitiesen mejorar la concentración.</p>
+						<h3>¿Como funciona?</h3>
+						<p>Este proyecto, 100% Shell, funciona en cualquier distribución de Linux sin instalar nada.<br>
+						Siemplemente clona el repositorio:</p>
+						<code>
+							git clone https://github.com/HectorCRM/Pomodoro_Timer.git
+						</code>
+						<p>Dale permiso de ejecución:</p>
+						<code>
+							chmod +x pomodoro-timer.sh
+						</code>
+						<p>Y ejecútalo:</p>
+						<code>
+							./pomodoro-timer.sh
+						</code>
+						<p>Una vez ejecutado aparecerá el menú principal:</p>
+						
+						<ol>
+							<li><b>Iniciar Pomodoro</b>(Previamente hay que selecionar el que queremos utilizar). El temporizador puede ser pausado/reanudado pulsando la letra 'p' en el teclado.</li>
+							<img class="imagenes-hola-mundo" src="img/PomodoroRun.png" alt="Menú principal del script">
+						<p class="pie-foto"><small>Pomodoro en marcha.</small></p>
+							<li><b>Seleccionar Pomodoro:</b> Esta opción permite elegir entre los pomodoros que hayamos creado. una vez elegido se mostrara en la cabecera del script el Pomodoro seleccionado.</li>
+							<img class="imagenes-hola-mundo" src="img/inicioPomodoro.png" alt="Menú principal del script">
+						<p class="pie-foto"><small>Selección de dsitribucion de tiempo.</small></p><br>
+							<li><b>Crear nuevo Pomodoro:</b> Mediante esta opción podemos crear nuevos Pomodoros personalizados.</li>
+							<li><b>Ver Pomodoro seleccionado:</b> Esta opción nos mostrará del Pomodoro seleccionado su nombre, la duración, la duración del descanso, la fecha de creación y el numero de veces que ha sido utilizado.</li>
+							<li><b>Configuracion</b>
+								<ol>
+									<li><b>Crear configuración:</b> Permite crear combinaciones de color diferentes para el script, modificando el color de la cabecera y de los menus de forma independente. Muestra los colores disponibles.</li>
+									<li><b>Seleccionar configuración:</b> Permite seleccionar las diferentes configuraciones creadas. Una vez seleccionada, en la cabecera del script dejara de mostrar configuracion por defecto y mostrará el nombre de la que se ha seleccionado.</li>
+									<li><b>Eliminar configuración:</b> Permite eliminar configuraciones desde el propio script.</li>
+									<li><b>Salir</b></li>
+								</ol>
+							</li>
+						</ol>
+						<p>&nbsp;&nbsp;0. <b>Salir</b></p>
+						</article>
+					</section>
+		</main>
+		</p>
+		<footer>
+				<div class="licencia">
+			  	<img src="img/licencia.png" alt="Licencia CC BY-NC-SA">
+			  </div>
+				<div class="pie-pagina">
+					<p>Mi sitio web v1.0<br>
+					Autor: Héctor Monroy Fuertes<br>
+					Creado: 24/01/2026</p>
+			  </div>  
+			 </footer>
+	</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HectorCRM - Odoo easy installer</title>
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+		<header>
+				<h1 class="header-font">Odoo easy installer</h1>
+				<p class="p-header">Programación | Electrónica | Historia</p>
+			<div class="pestañas">
+				<div><a href="index.html" class="pestaña">Inicio</a></div>
+				<div><a href="sobreMi.html" class="pestaña">Sobre mí</a></div>
+				<div class="dropdown">Proyectos
+					<div class="dropdown-content">
+						<a href="pomodoro-timer.html">Pomodoro Timer</a><br>	
+						<a href="holamundo.html">¡Hola mundo!</a><br>	
+						<a href="">Odoo easy installer</a><br>
+						<a href="pgadmin-easy-installer.html">PgAdmin easy installer</a><br>
+						<a href="espMeteo.html">Esp Meteo</a>
+					</div>
+				</div>
+				<div><a href="contacto.html" class="pestaña">Contacto</a></div>
+
+			</div>
+		</header>
+		</p>
+		<main>
+				<section class="seccion">
+					<article class="seccion">
+						<h1>Odoo easy installer</h1>
+						<img  src="img/imgs_install_odoo/Odoo_instalado.png" alt="Header de Odoo-easy-installer">
+						<p class="pie-foto"><small>Odoo instalado con el instalador en menos de 5 minutos</small></p>
+						<br>
+						<h2>¡Antes de usar!</h2>
+						<p class="fuente">Por el momento el instalador ha sido probado en estas distribuciones de Linux para un uso educativo y de aprendizaje.
+Para su uso en entornos no educativos es más que recomendable eliminar contraseñas del archivo installer.conf si se configura para una instalación rápida, asi como del archivo informe-instalacion.html o cambiarlas tras la instalación. </p>
+<br>
+						 <h2>Objetivo del proyecto</h2>
+						 <p>Si alguna vez te has enfrentado a instalar Odoo por primera vez, sabrás lo frustrante que puede llegar a ser. Pero hay que tratar de convertir retos en posibilidades.
+Así nace este proyecto, de la frustración de tratar de instalar el ERP de Odoo sin exito. Decidí coger esa frustración y crear un proyecto que pueda ser de utilidad a los demás.
+Este proyecto simplifica y acorta enormemente el proceso de instalación de Odoo. De hecho se instala en poco menos de 5 minutos(1 minuto menos con la bandera -x).</p>
+<br>
+							<h2>Novedades en v3.0</h2>
+							<p>
+								Se han omitido los caracteres de las contraseñas, sustituyendolos por "*".<br>
+								Se han añadido dos nuevas banderas al script:<br>
+
+										<b>--pgadmin</b>: Esta nueva bandera permite instalar y configurar PgAdmin4 v9.11 en modo servidor al terminar la instalación de Odoo.<br>
+										<b>--pg-help</b>: Esta bandera amplía la información sobre la anterior.<br>
+
+								Ahora se puede añadir la bandera --pgadmin a las que ya habia creadas e instalar PgAdmin4 a continuación de la instalación de Odoo.
+							</p>
+							<h2>Instalación</h2>
+							<p>
+								Clona el repositorio en tu ordenador:<br>
+								<code>
+									git clone https://github.com/HectorCRM/Odoo-easy-installer.git
+								</code>
+								<p>Dale permiso de ejecución al archivo instalador.sh:</p>
+								<code>
+									chmod +x instalador.sh<br>
+								</code>
+								<p>Ejecútalo, usando banderas de forma opcional y ve siguiendo los pasos.</p><br>
+								<img class="imagenes-hola-mundo" src="img/odoo-easy-installer.png" alt="Header de Odoo-easy-installer">
+						<p class="pie-foto"><small>Header del script.</small></p>
+						<br>
+								<b>¿Qué ira haciendo el instalador?</b>
+								<ol>
+									<li>El instalador comprobará la conexión a internet lanzando un ping a github.com.</li>
+									<li>Preguntará que versión de Odoo clonar(<b>ej: 18.0</b>).</li>
+									<li>Después pedirá que el usuario introduzca y confirme una contraseña para PostgreSQL(se instalará automaticamente más tarde).</li>
+									<li>Actualizará los repositorios del sistema y creará un archivo de texto temporal con todos los que estan instalados antes de instalar nada para Odoo, esto permitirá hacer una desinstalación limpia si se desea.</li>
+									<li>Instalará todas las dependencias necesarias para el funcionamiento de Odoo.</li>
+									<li>Creará el usuario <b>odoo</b> en el sistema junto con su directorio.</li>
+									<li>Creará el usuario y contraseña para Odoo en PostgreSQL.</li>
+									<li>Clonará la versión de Odoo elegida del repositorio oficial de Odoo en el directorio personal del usuario <b>odoo</b>.</li>
+									<li>Creará, si no existe, el directorio para custom-addons.</li>
+									<li>Creará un entorno virtual con python3-venv e instalará en el los paquetes del requirements.txt.</li>
+									<li>Pasado un "breve" periodo de tiempo instalando paquetes, el instalador solicitará al usuario que introduzca y confirme una contraseña de acceso a la plataforma de Odoo.</li>
+									<li>Configura los archivos odoo.conf y odoo.service.</li>
+									<li>Comprueba si el puerto 8069 está libre, de no estarlo se pregunta al usuario si quiere seguir con la instalación. En caso afirmativo se le recomienda modificar el puerto de Odoo en el archivo /etc/odoo.conf, en caso negativo se interrumpe la instalación.</li>
+									<li>Recarga el demonio e inicia el servicio de Odoo.</li>
+									<li>Crea un archivo de texto temporal con los paquetes instalados en el sistema tras instalar Odoo. Ordena el archivo que se creo antes de iniciar la instalación y el que se acaba de crear y los compara, guardando sólo los paquetes que se han instalado durante la instalación de Odoo en un nuevo archivo, el cual permitirá hacer una desinstalación limpia si se desea.</li>
+									<li>Finaliza la instalación y genera un informe final, con la fecha y la hora en la que se realizó, y los diferentes usuarios y contraseñas.</li>
+									<li>Elimina de la memoria todas las variables y borra los archivos temporales.</li>
+									<li>Tras algo menos de 5 minutos, Odoo está listo para ser utilizado.</li>
+								</ol>
+							</p>
+							<img class="imagenes-hola-mundo" src="img/fin-install-odoo.png" alt="Fin de instalacion en menos de 5 min">
+						<p class="pie-foto"><small>Odoo instalado en menos de 5 minutos.</small></p>
+						<br>
+							<h2>Desinstalación</h2>
+								<p>
+									Para una desinstalación completa es necesario que el archivo <b>pkgs-installed-odoo.txt</b> este presente en la misma carpeta, ya que en él se guarda el nombre de todos los paquetes instalados para Odoo en el sistema. Sin él estos paquetes no podrán ser eliminados.<br>
+Para desinstalar Odoo primero hay que dar permiso de ejecución al archivo <b>desinstalador.sh</b>:<br>
+								</p>
+								<code>
+									chmod +x desinstalador.sh
+								</code>
+								<p>Después, ejecútalo:</p>
+								<code>
+									./desinstalador.sh
+								</code>
+								<p>
+									Ahora solo tienes que ir confirmando las acciones ya que estas son destructivas(sólo con Odoo).<br>
+									¿Qué ira haciendo el desinstalador?
+								</p>
+								<ol>
+									<li>
+										Pedirá confirmación para prodecer con la desinstalación, en caso afirmativo buscará el archivo <b>installer.conf</b> para saber qué tiene que eliminar.
+									</li>
+									<li>
+										Detendrá y eliminara el servicio de Odoo en el sistema.
+									</li>
+									<li>
+										Pedirá confirmación para eliminar el usuario creado para Odoo en el sistema junto con su directorio.
+									</li>
+									<li>
+										Pedirá confirmación para eliminar el usuario creado en PostgreSQL para Odoo.
+									</li>
+									<li>
+										Buscará el archivo <b>pkgs-installed-odoo.txt</b> y pedirá confirmación para eliminar del sistema todos los paquetes que figuran en él. 
+									</li>
+								</ol>
+								<br>
+								<h2>Requisitos</h2>
+								<ul>
+									<li>
+										Git instalado en el sistema
+									</li>
+									<li>
+										Permiso root
+									</li>
+									<li>
+										Conexión a internet
+									</li>
+								</ul>
+								<br>
+								<h2>Distribuciones Linux soportadas</h2>
+								<p>El instalador ha sido probado con exito en las siguientes distribuciones(gestor de paquetes APT):</p>
+								<ul>
+									<li>Linux Mint 22.2</li>
+									<li>Debian 12</li>
+									<li>Ubuntu 24.04</li>
+								</ul>
+								<div>
+						<img class="imagenes-hola-mundo" src="img/Odoo-Debian12(bookworm).png" alt="Instalacion en Debian 12">
+						<p class="pie-foto"><small>Odoo instalado en Debian 12.</small></p>
+						<br>
+						
+					</div>
+					<div>
+						<img class="imagenes-hola-mundo" src="img/Odoo-Ubuntu24.04.png" alt="Instalacion de requeriments.txt de Odoo">
+						<p class="pie-foto"><small>Odoo istalado en Ubuntu 24.04.</small></p>
+					</div>
+						</article>
+					</section>
+		</main>
+		</p>
+		<footer>
+				<div class="licencia">
+			  	<img src="img/licencia.png" alt="Licencia CC BY-NC-SA">
+			  </div>
+				<div class="pie-pagina">
+					<p>Mi sitio web v1.0<br>
+					Autor: Héctor Monroy Fuertes<br>
+					Creado: 24/01/2026</p>
+			  </div>  
+			 </footer>
+	</body>
+</html>

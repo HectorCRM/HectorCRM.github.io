@@ -1,0 +1,344 @@
+/* Este archivo CSS esta ordenado de la siguiente manera:
+			-Primera parte: estilo común a todas las paginas --> header, pestañas de navegación, body, main y footer
+			-Segunda parte(Estilos para index.html)
+			-Tercera parte(Estilos contenido.html)
+			-Cuarta parte(Estilos contacto.html)
+	 
+	 En cada parte figuran los estilos de la pagina en concreto, ordenados segun aparecen en el HTML.
+	 
+	 Autor: Héctor Monroy Fuertes
+	 Fecha: 25/01/2026
+*/
+/*Estilo para la cabecera de todas las páginas*/
+header{ 
+	background-color: Gray; /*Color de fondo*/
+	background-image: url('../img/yo.png'); /*Icono de github de fondo*/
+	background-position: 10px -100px; /*Alineacion del icono a la izquierda de la cabecera*/
+	background-repeat: no-repeat; /*No se repite el icono*/
+	text-align: center; /*Alineacion de las pestañas*/
+	font-family: monospace; /*Fuente de las pestañas*/
+	font-size: 35px; /*Tamaño de fuente de las pstañas*/
+	border: black 2px outset; /*Borde exterior de la cabecera*/
+	border-radius: 10px; /*redondeo de las esquinas*/
+	margin: 5px; /*Margenes exteriores*/
+	padding: 3px; /*Margen interior*/
+	height: 160px display: flex;
+	animation-name: degradado; /*Efecto de transicion de colores para el color de fondo de la cabecera*/
+	animation-duration: 15s; /*Duracion de la animacion*/
+}
+
+/*Cuando estamos en una pestaña concreta(index|contenido|contacto) cambia su color a blanco*/
+.nav-link {color: WhiteSmoke;} 
+
+/*Al pasar el cursor sobre las pestañas cambian a blanco*/
+nav a:hover{ 
+	color: WhiteSmoke;
+}
+
+/*Estilo para el titulo de la cabecera*/
+.header-font {
+	font: oblique bold 120% cursive; /*Estilo de fuente*/
+	color: black; /*Color del titulo*/
+	text-align: center; /*Alineado al centro*/
+	text-shadow: 8px 8px 10px black; /*Sobra para dar sensacion de profundidad*/
+}
+
+/*Imagen de fondo comun para todas las páginas*/
+body { 
+	background-image: url('../img/computer-program-coding-screen.jpg');
+}
+
+/*Estilo para el cuerpo principal de las páginas, donde se mostrará el contenido*/
+main { 
+	border: black 2px outset; /*Borde del cuerpo*/
+	margin: 5px; /*Margen respecto al borde del navegador*/
+	padding: 15px; /*Margen interno*/
+	background-color: black; /*Fondo negro*/
+	opacity: 0.9; /*Color de fondo ligeramente transparente para que se vea la imagen de fondo*/
+	border-radius: 10px; /*Esquinas redondeadas*/
+	
+}
+
+/*Estilo común para el pies de todas las páginas*/
+footer { 
+	display: flex;
+	flex-direction: row;
+	border: black 2px outset; /*Borde del pie, igual que el del main y el del header*/
+	text-align: center; /*Texto alineado al centro*/
+	padding: 3px; /*margen interno*/
+	background-color: Gray; /*Color de fono, mismo que en el header*/
+	border-radius: 10px; /*Mismo radio de redondeo que para header y main*/
+	color: black; /*Color de la letra*/
+	text-shadow: 8px 8px 10px black; /*Sombra para dar sensacion de profundidad*/
+	animation-name: degradado; /*Degradado de colores, igual que en la cabecera*/
+	animation-duration: 15s; /*Misma duracion que en la cabecera*/
+}
+
+/*Efecto de degradado de colores, va variando el color de 0% a 100% y al final vuelve a su color*/
+@keyframes degradado {
+	0% {background-color: DimGray;}
+	25% {background-color: LightSlateGray;}
+	50% {background-color: SlateGray;}
+	75% {background-color: DarkSlateGray;}
+	100% {background-color: DarkGray;}
+}
+
+/*Menu de navegacion comun a todas las paginas*/
+nav a {
+	text-decoration: none; /*Sin resaltado de link*/
+	color: black; 
+	text-shadow: 8px 8px 10px black;
+	padding-right: 5px;
+	font-size: 25px;
+}
+
+/*Badge de licencia CC*/
+.licencia img{
+	display: flex;
+	/*Margenes arriba|izquierda|derecha para dejarla centrada*/
+	margin-top: 25px; 
+	margin-left: 700px;
+	margin-right: 10px;
+	/*Anchura ajustada y altura automatica para mantener proporcion*/
+	width: 140px;
+	height: auto;
+	
+}
+
+/*Pie de página con version del sitio, nombre y fecha creación*/
+.pie-pagina{
+	display: flex;
+	margin-top: 1px;
+	text-align: center; /*Texto centrado*/
+}
+
+
+
+/*                                              AQUI COMIENZAN LOS ESTILOS APLICADOS EN INDEX.HTML*/
+/*Cuerpo principal, encerrará dos secciones diferentes*/
+.seccion-principal {
+	display: flex;
+  flex-direction: row; 	
+}
+
+/*Sección izquierda*/
+.seccion-lh {
+	color: WhiteSmoke; /*Color de la letra*/
+	/*Margenes para centrar el contenido*/
+	margin-top: 10px;
+	margin-left: 50px;
+	margin-right: 200px;
+	/*Altura y anchura*/
+	width: 600px;
+	height: 200px;
+	/*Opacidad muy baja, casi transparente*/
+	opacity: 0.3;	
+}
+
+.seccion-lh:hover {opacity: 1;} /*Al pasar el cursor por encima el texto recupera una opacidad más normal*/
+
+/*Fuente para los articulos de la pagina principal*/
+.fuente-index {
+	font-family: monospace;/*'Brush Script MT', 'Brush Script Std', cursive;*/
+	font-size: 20px;	
+}
+
+/*Sección del lado derecho, misma estructura que para el lado izquierdo pero ajustando valores*/
+.seccion-rh {
+	color: WhiteSmoke;
+	margin-top: 10px;
+	margin-left: 350px;
+	width: 600px;
+	opacity: 0.3;
+}
+
+/*Al pasar el cursor por encima recupera una opacidad mas normal*/
+.seccion-rh:hover {opacity: 1;} 
+
+
+
+
+/*                                                  AQUÍ COMIENZAN LOS ESTILOS APLICADOS EN CONTENIDO.HTML*/
+/*"Contenedor" en el que se almacenan las diferentes tarjetas con contenidos. También utilizado en contacto.html*/
+.contenedor-tarjetas{ 
+  display: flex;       
+  flex-direction: row; /*Se muestran las tarjetas en fila*/
+  gap: 20px;   /*Separacion entre tarjetas*/      
+  flex-wrap: wrap; /*Al acerse pequeña la ventana del navegador se siguen mostrando proporcionadas*/
+  margin-left: 50px;    
+}
+
+/*Tarjetas con resumen de contenidos*/
+.tarjeta{
+     display: flex;
+     flex-direction: column; /*Muestra el contenido en columna*/
+     justify-content: space-between;
+     /*caracteristicas de la tarjeta, tamaño, borde, redondeo de esquinas, fuente...*/
+     width: 300px;
+     height: 440px;
+     border: 1px solid lightgray;
+     border-radius:15px;
+     font-family: sans-serif;
+     /*Cuanto tarda en pasar de su tamaño normal al tamaño definido en el hover*/
+     transition: width 1s;
+     background-color: Gray;
+     opacity: 1;
+}
+
+/*Efecto al pasar el cursor sobre las diferentes tarjetas*/
+.tarjeta:hover{
+	background-color: LightGray; /*Cambia el color del fondo, dejando entrever el pie de la tarjeta*/
+	box-shadow: 5px 10px 18px Gray; /*Genera sombra para destacar la tarjeta*/
+	/*Aumenta ligeramente el tamaño de la tarjeta*/
+	width: 320px;
+	height: 480px;
+	
+}
+
+/*Titulo de la tarjeta*/
+.titulo{
+	text-align: center; /*Texto alineado al centro*/
+	text-shadow: 2px 2px Gray; /*Sombra del titulo*/
+	font-size: 24px; /*Tamaño del titulo*/
+  padding: 10px 10px 0 10px; /*Centrado del titulo*/
+}
+
+/*Descripcion contenida por la tarjeta*/
+.cuerpo{
+	padding: 10px;
+	overflow: hidden; /*Conetnido oculto si excede el tamaño de la tarjeta*/
+}
+
+/*Efecto al pasar el cursor sobre el cuerpo de la tarjeta */
+.cuerpo:hover{
+	overflow: visible; /*Muestra el conteniod oculto*/
+}
+
+/*Imagen de la tarjeta de contenido*/
+.cuerpo img{
+	height: auto; /*Altura automatica para mantener proporción*/
+	width: 95%; /*Se ajusta al 95% del tamaño de la tarjeta*/
+}
+
+/*Pie de la tarjeta*/
+.pie{
+	background: Gray; /*Mismo color de fondo que la tarjeta para mantenerlo oculto hasta pasar el cursor sobre la tarjeta*/
+	color: Gray; /*Mismo efecto*/
+	border-radius:0 0 15px 15px; /*Redondeadas esquinas inferiores*/
+	padding: 10px;
+	text-align:center; /*Texto alineado al centro*/
+     
+}
+
+/*Efecto al pasar el cursor por el pie de la tarjeta*/
+.pie:hover{
+	background: black; /*Se cambia el fono a negro para que destaque*/
+  color: WhiteSmoke; /*Se cambia la letra a blanco para que se legible*/
+  cursor: pointer; /*Se cambia el cursor para resaltar que es un link*/
+}
+
+/*Link a los proyectos en el pie de la tarjeta*/
+.pie a{
+	color: Gray; 
+	text-decoration: none; /*Letra normal*/
+}
+
+
+
+
+/*                                          AQUÍ COMIENZAN LOS ESTILOS APLICADOS EN CONTACTO.HTML*/
+/*Formularios de la pagina de contacto, uno a la izquierda y otro a la derecha de la pagina*/
+.formulario-contacto {
+	font-family: "Lucida Console", "Courier New", monospace; 
+	border: 1px black;
+	background-color: DarkSlateGray; 
+	width: 400px;
+	height: 600px;
+	border-radius: 10px;
+	margin-left: 0px;
+	text-align: center;
+}
+
+/*Animacion con sombra al pasar el cursor por los diferentes apartados*/
+.formulario-contacto:hover {box-shadow: 5px 10px 18px Gray;} 
+
+/*Campos de entrada de datos al formulario de contacto*/
+.input-form {
+	margin-right: 10px;
+	border-radius: 6px;
+	background: lightGray;
+}
+
+/*Caja central para mostrar iconos interactivos de distintas redes sociales*/
+.formulario-redes {
+	font-family: "Lucida Console", "Courier New", monospace;
+	background-color: DarkSlateGray;
+	display: flex;
+  flex-direction: row;
+	width: 600px;
+	height: 100px;
+	border-radius: 10px;
+	margin-right: 150px;
+	margin-left: 150px;
+	text-align: center;
+}
+
+/*Animacion con sombra al pasar el cursor por la caja*/
+.formulario-redes:hover {box-shadow: 5px 10px 18px Gray;} 
+
+/*Contenedores para la imagen y el link de las redes sociales*/
+.redes {
+	margin-left : 10px;
+	margin-top: 10px;
+	position: relative;
+  animation-name: myAnimation; /*Anmimacion de los iconos al abrir la pagina*/
+  animation-duration: 2s; /*Duración de la animación*/
+}
+
+/*Distintas animaciones para cada icono, se especifica por el id de cada icono definido en el html*/
+#div1 {animation-timing-function: linear;}
+#div2 {animation-timing-function: ease;}
+#div3 {animation-timing-function: ease-out;}
+
+/*Animacion de los iconos*/
+@keyframes myAnimation {
+  from {top: 400px;} /*Posicion de la que parten*/
+  to {top: 10px;} /*Su posicion final, a 10px del borde superior de la caja*/
+}
+
+/*Reescalado de los iconos de LinkedIn y de GitHub*/
+.icono-redes {
+	width: 60px;
+	height: auto;
+	margin-right: 25px;
+	padding: 5px;
+	transition: width 1s; /*Al pasar el cursor sobre ellos aumentaran ligeramente su tamaño*/
+}
+
+/*Al pasar el cursor sobre los iconos aumentan ligeramente su tamaño dando una sensacion mas interactiva*/
+.icono-redes:hover {width: 70px;}
+
+/*El icono de youtube debido a su tamaño a tenido que ser tratado aparte de los otros dos*/
+.icono-youtube {
+	width: 100px; /*Solo cambia su ancgura para mantener la proporcion repecto a los otros*/
+	height: auto;
+	margin-right: 25px;
+	margin-top: 12px;
+	padding: 5px;
+	transition: width 1s; /*Al pasar el cursor sobre ellos aumentaran ligeramente su tamaño*/
+}
+
+/*Al igual que los otros iconos, aumenta ligeramente su tamaño al pasar sobre el*/
+.icono-youtube:hover {width: 110px;}
+
+
+
+
+
+
+
+
+
+
+
+

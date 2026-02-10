@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HectorCRM - PgAdmin easy installer</title>
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+		<header>
+				<h1 class="header-font">Odoo easy installer</h1>
+				<p class="p-header">Programación | Electrónica | Historia</p>
+			<div class="pestañas">
+				<div><a href="index.html" class="pestaña">Inicio</a></div>
+				<div><a href="sobreMi.html" class="pestaña">Sobre mí</a></div>
+				<div class="dropdown">Proyectos
+					<div class="dropdown-content">
+						<a href="pomodoro-timer.html">Pomodoro Timer</a><br>	
+						<a href="holamundo.html">¡Hola mundo!</a><br>	
+						<a href="odoo-easy-installer.html">Odoo easy installer</a><br>
+						<a href="">PgAdmin easy installer</a><br>
+						<a href="espMeteo.html">Esp Meteo</a>
+					</div>
+				</div>
+				<div><a href="contacto.html" class="pestaña">Contacto</a></div>
+
+			</div>
+		</header>
+		</p>
+		<main>
+				<section class="seccion">
+					<article class="seccion">
+						<h1>PgAdmin4 easy installer</h1>
+						<img src="img/pgadmin.png" alt="Header de Odoo-easy-installer">
+						<p class="pie-foto"><small>Inicio del script.</small></p>
+						<h2>¡Antes de usar!</h2>
+						<p class="fuente">Por el momento este instalador sólo ha sido probado en VM con Linux Mint 22.2, para un uso educativo.</p>
+						<br>
+						 <h2>Objetivo del proyecto</h2>
+						 <p>Si has tratado de instalar y configurar alguna vez pgAdmin 4 en modo servidor, seguro que sabes lo complicado que puede llegar a ser las primeras veces. De hecho si has llegado hasta este proyecto seguramente haya sido por que ya no sabías donde rebuscar para lograrlo.
+Este pequeño proyecto trata de simplificar al máximo la instalación y configuración de pgAdmin 4 en su última versión, 9.11 (a fecha 13/01/2026). De hecho se instala y configura en 4 minutos. Lo único que tiene que hacer el usuario es ejecutarlo y aportar un email y contraseña para acceder a pgAdmin cuando el instalador lo solicite. Y ya está. En 4 minutos estarás ante la pantalla de acceso a pgAdmin</p><br>
+							<h2>Instalación</h2>
+							<p>
+								Clona el repositorio en tu ordenador:<br>
+								<code>
+									git clone https://github.com/HectorCRM/pgAdmin4-easy-installer.git
+								</code>
+								<p>Dale permiso de ejecución al archivo <b>pgAdmin4-install.sh</b>:</p>
+								<code>
+									chmod +x pgAdmin4-install.sh
+								</code>
+								<p>Ejecútalo:</p>
+								<code>
+									./pgAdmin4-install.sh
+								</code>
+								<br>
+								<p><b>¿Qué ira haciendo el instalador?</b></p>
+								<ol>
+									<li>El instalador comprobará la conexión a internet lanzando un ping a github.com.</li>
+									<li>Actualizará los repositorios del sistema.</li>
+									<li>Después instalará algunas dependencias necesarias para pgAdmin y Apache.</li>
+									<li>Creará los directorios necesarios para el correcto funcionamiento de pgAdmin y del servidor.</li>
+									<li>Creará un entorno virtual con python-venv.</li>
+									<li>Descargará e instalará pgAdmin desde la página oficial. Para esta versión del instalador descargará la versión 9.11.</li>
+									<li>Creará el archivo de configuración local <b>config_local.py</b>.</li>
+									<li>Ahora pedirá al usuario un email y una contraseña para acceder a PgAdmin desde el navegador.</li>
+									<li>Después creará un archivo de configuracion para el servidor de Apache. Deshabilitará el host predeterminado de Apache y habilitará el que se acaba de crear.</li>
+									<li>Comprueba la correción de la sintaxis del archivo creado y reinicia el servicio de Apache para que inicie con la nueva configuración.</li>
+									<li>Finaliza la instalación y abre pgAdmin4 en Firefox. Si no se tiene instalado Firefox muestra la ruta para copiar y pegar en el navegador.</li>
+								</ol>
+							</p>
+							<img class="imagenes-hola-mundo" src="img/fin_instalacion.png" alt="PgAdmin4 instalado en el sistema">
+						<p class="pie-foto"><small>PgAdmin4 instalado y configurado en el sistema en menos de 4 minutos</small></p>
+						<br>
+								<h2>Requisitos</h2>
+								<ul>
+									<li>
+										Git instalado en el sistema
+									</li>
+									<li>
+										Permiso root
+									</li>
+									<li>
+										Conexión a internet
+									</li>
+								</ul>
+								<br>
+								<h2>Distribuciones Linux soportadas</h2>
+								<p>El instalador ha sido probado con exito en las siguientes distribuciones(gestor de paquetes APT):</p>
+								<ul>
+									<li>Linux Mint 22.2</li>
+								</ul>
+						</article>
+					</section>
+		</main>
+		</p>
+		<footer>
+				<div class="licencia">
+			  	<img src="img/licencia.png" alt="Licencia CC BY-NC-SA">
+			  </div>
+				<div class="pie-pagina">
+					<p>Mi sitio web v1.0<br>
+					Autor: Héctor Monroy Fuertes<br>
+					Creado: 24/01/2026</p>
+			  </div>  
+			 </footer>

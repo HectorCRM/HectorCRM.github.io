@@ -1,0 +1,434 @@
+/*	
+		¡Mi sitio web!
+		Este sitio ha sido creado con la intencion de mostrar mis principales proyectos desarrollados asi como portal divulgativo de conetnido historico-informatico
+		
+		Autor: Héctor Monroy Fuertes
+		Version: 1.0(31-01-2026)
+		*/
+
+/*Estilos comunes a todas las paginas*/
+
+/*Estilos para la cabecera*/
+header {
+	/*display: block;*/
+	/*flex-direction: row;*/
+	border: black 2px outset; /*Borde del pie, igual que el del main y el del header*/
+	/*padding: 3px; /*margen interno*/
+	background-image: linear-gradient(to right, DarkSlateGray, #111111, gray, lightgray); /*Color de fono, mismo que en el header*/
+	border-radius: 10px; /*Mismo radio de redondeo que para header y main*/
+	width: 100%;
+	height: 180px;
+	/*position: fixed;*/
+	background-image: url('img/giphy.gif');
+	background-size: contain;
+
+	 
+}
+.header-font {
+	/*font: oblique monospace; /*Estilo de fuente*/
+	font-family: cursive;
+	font-size: 48px;
+	
+	margin-left: 45px;
+	margin-top: 25px;
+	color: gray; /*Color del titulo*/
+	text-align: left; /*Alineado al centro*/
+	/*text-shadow: 6px 6px 10px lightGray; /*Sobra para dar sensacion de profundidad*/
+	z-index: 10;
+}
+.header-font:hover {
+	text-shadow: 8px 8px 5px White; /*Sobra para dar sensacion de profundidad*/
+	color: whiteSmoke;
+	
+}
+
+.p-header {
+	font: bold 16px monospace; /*Estilo de fuente*/
+	color: gray;
+	margin-left: 30px;
+}
+.p-header:hover {
+	text-shadow: 8px 8px 10px White; /*Sobra para dar sensacion de profundidad*/
+	color: whiteSmoke;
+}
+/*Barra de navegación*/
+.pestañas {
+	display: flex;
+	flex-direction: row;
+	background-color: #2F89A2; 
+	border: black 2px outset;
+	border-radius: 0px 0px 0px 10px;
+	width: 460px;
+	height: 25px;
+	position: top;
+	padding: 0px;
+	margin-right: 5px;
+}
+.pestaña {
+	margin: 15px;
+	text-decoration: none;
+	cursor: pointer;
+	color: black;
+	font: bold 18px monospace;
+	
+}
+.pestaña-actual {
+	background-color: lightGray;
+	border: black 2px;
+	border-radius: 8px 8px 0px 0px;
+	margin: 15px;
+	/*padding: 3px;*/
+	text-decoration: none;
+	font: bold 18px monospace;
+	color: black;
+}
+.nombre-pestaña {
+	margin-left: 400px;
+}
+.pestaña:hover {
+	background-color: lightGray;
+	border: black 2px;
+	/*border-radius: 8px;*/
+	border-radius: 8px 8px 0px 0px;
+	/*padding: 2px;*/
+	
+}
+.dropdown {
+  position: relative;
+  font: bold 18px monospace;
+}
+.dropdown:hover {
+	background-color: lightGray;
+	border: black 2px;
+	border-radius: 8px 8px 0px 0px;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: gray;
+  min-width: 250px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 0px 8px 8px 8px;
+  padding: 12px 16px;
+  z-index: 9;
+  margin-bottom: 5px;
+  
+}
+.dropdown-content a{
+	text-decoration:none;
+	color:black;
+	cursor:pointer;
+	margin-bottom: 5px;
+}
+.dropdown-content a:hover{
+	background-color: WhiteSmoke;
+	color: black;
+	border: black 2px;
+	border-radius: 8px;
+	padding: 4px;
+	text-align: left;
+}
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  background-color: lightGray;
+}
+
+/*Estilos para el fondo de la pagina*/
+body {
+	/*background-color: #111111;*/
+	background-color: black;
+	/*background-image: url('img/computer-program-coding-screen.jpg');*/
+}
+
+/*Estilos para el cuerpo principal de la pagina, donde se mostrarán los contenidos*/
+main {
+	display: flex;
+	flex-direction: row; 
+	border: black 2px outset; /*Borde del cuerpo*/
+	margin-left: 5px; /*Margen respecto al borde del navegador*/
+	padding: 15px; /*Margen interno*/
+	/*background-image: linear-gradient(to right, DarkSlateGray, #111111, gray, lightgray);*/
+	background-image: linear-gradient(to right, #180333, #030633, #031E33);
+	opacity: 1; /*Color de fondo ligeramente transparente para que se vea la imagen de fondo*/
+	border-radius: 10px; /*Esquinas redondeadas*/
+	min-height: 600px;
+	overflow: scroll;
+	scrollbar-color: lightgray black;
+}
+main:hover {
+	opacity: 1;
+}
+
+.contenedor-foto {
+	position: relative;
+  	width: 50%;
+}
+.foto-index {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: 10px;
+	border: black 1px;
+}
+.descripcion-deslizante {
+	position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #111111;
+  background-image: url('img/hola.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 0;
+  height: 100%;
+  transition: .5s ease;
+  box-shadow: 10px 10px 5px #aaaaaa;
+}
+.contenedor-foto:hover .descripcion-deslizante {
+	width: 100%;
+}
+.descripcion {
+	white-space: nowrap; 
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  overflow: hidden;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+/*Estilo común para el pies de todas las páginas*/
+footer { 
+	display: flex;
+	flex-direction: row;
+	border: black 2px outset; /*Borde del pie, igual que el del main y el del header*/
+	text-align: center; /*Texto alineado al centro*/
+	padding: 3px; /*margen interno*/
+	background-image: linear-gradient(to right, #180333, #030633, #031E33);
+	border-radius: 10px; /*Mismo radio de redondeo que para header y main*/
+	color: LightGray; /*Color de la letra*/
+	text-shadow: 6px 8px 8px white; /*Sombra para dar sensacion de profundidad*/
+	animation-name: degradado; /*Degradado de colores, igual que en la cabecera*/
+	animation-duration: 15s; /*Misma duracion que en la cabecera*/
+}
+
+.licencia img{
+	display: flex;
+	/*Margenes arriba|izquierda|derecha para dejarla centrada*/
+	margin-top: 25px; 
+	margin-left: 700px;
+	margin-right: 10px;
+	/*Anchura ajustada y altura automatica para mantener proporcion*/
+	width: 140px;
+	height: auto;
+	
+}
+
+/*Pie de página con version del sitio, nombre y fecha creación*/
+.pie-pagina{
+	display: flex;
+	margin-top: 1px;
+	text-align: center; /*Texto centrado*/
+}
+
+.seccion-principal {
+	display: flex;
+  	flex-direction: row;
+  	height: auto;
+}
+
+/*Sección izquierda*/
+.seccion-index {
+	color: WhiteSmoke; /*Color de la letra*/
+	/*-webkit-text-stroke: 1px black; /*contorno negro en la fuente*/
+	margin-top: 10px;
+	margin-left: 50px;
+	margin-right: 200px;
+	/*Altura y anchura*/
+	width: 600px;
+	height: 200px;
+
+}
+.seccion {
+	color: WhiteSmoke;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 50px;
+	min-height: 200px;
+	justify-content: center;
+	/*width: 1000px;*/
+	font-family: monospace;/*'Brush Script MT', 'Brush Script Std', cursive;*/
+	font-size: 16px;
+
+}
+
+/*ESTILOS PARA EL PROYECTO HOLA MUNDO*/
+.seccion-hola-mundo {
+	display: flex;
+  	flex-direction: column;
+  	height: auto;
+}
+.seccion-ppl-lenguajes {
+	display: flex;
+  	flex-direction: row;
+  	height: auto;
+}
+.lenguajes {
+	color: WhiteSmoke; /*Color de la letra*/
+	/*-webkit-text-stroke: 1px black; /*contorno negro en la fuente*/
+	margin-top: 10px;
+	margin-left: 100px;
+	margin-right: 50px;
+	/*Altura y anchura*/
+	width: 800px;
+	height: 200px;
+}
+.imagenes-hola-mundo {
+	width: 600px;
+	height: auto;
+	border-radius: 10px;
+	box-shadow: 8px 8px 20px gray;
+}
+code {
+  font-family: Consolas,"courier new";
+  color: crimson;
+  background-color: lightGray;
+  padding: 2px;
+  font-size: 105%;
+}
+.pie-foto {
+	color: WhiteSmoke;
+}
+.entradas-hola-mundo a:hover {
+	background-color: lightblue;
+	color: black;
+	padding: 3px;
+	border-radius: 8px;
+}
+
+.seccion-lh:hover {opacity: 1;} /*Al pasar el cursor por encima el texto recupera una opacidad más normal*/
+
+/*Fuente para los articulos de la pagina principal*/
+.fuente-index {
+	font-family: monospace;/*'Brush Script MT', 'Brush Script Std', cursive;*/
+	font-size: 20px;	
+}
+
+.h1-contacto {
+	font-family: monospace;
+	color: WhiteSmoke;
+	font-size: 60px;
+	/*writing-mode: vertical-rl;*/
+}
+.h1-contacto:hover {
+	color: WhiteSmoke;
+	text-shadow: 8px 8px 5px gray;
+}
+.formulario-redes {
+	font-family: "Lucida Console", "Courier New", monospace;
+	background-color: DarkSlateGray;
+	display: flex;
+  flex-direction: row;
+	width: 600px;
+	height: 100px;
+	border-radius: 10px;
+	margin-right: 150px;
+	margin-left: 150px;
+	text-align: center;
+}
+
+/*Animacion con sombra al pasar el cursor por la caja*/
+.formulario-redes:hover {box-shadow: 5px 10px 18px Gray;} 
+
+/*Contenedores para la imagen y el link de las redes sociales*/
+.redes {
+	margin-left : 10px;
+	margin-top: 10px;
+	position: relative;
+  animation-name: myAnimation; /*Anmimacion de los iconos al abrir la pagina*/
+  animation-duration: 2s; /*Duración de la animación*/
+}
+
+/*Distintas animaciones para cada icono, se especifica por el id de cada icono definido en el html*/
+#div1 {animation-timing-function: linear;}
+#div2 {animation-timing-function: ease;}
+#div3 {animation-timing-function: ease-out;}
+
+/*Animacion de los iconos*/
+@keyframes myAnimation {
+  from {top: 400px;} /*Posicion de la que parten*/
+  to {top: 10px;} /*Su posicion final, a 10px del borde superior de la caja*/
+}
+
+/*Reescalado de los iconos de LinkedIn y de GitHub*/
+.icono-redes {
+	width: 60px;
+	height: auto;
+	margin-right: 25px;
+	padding: 5px;
+	transition: width 1s; /*Al pasar el cursor sobre ellos aumentaran ligeramente su tamaño*/
+}
+
+/*Al pasar el cursor sobre los iconos aumentan ligeramente su tamaño dando una sensacion mas interactiva*/
+.icono-redes:hover {width: 70px;}
+
+/*El icono de youtube debido a su tamaño a tenido que ser tratado aparte de los otros dos*/
+.icono-youtube {
+	width: 100px; /*Solo cambia su ancgura para mantener la proporcion repecto a los otros*/
+	height: auto;
+	margin-right: 25px;
+	margin-top: 12px;
+	padding: 5px;
+	transition: width 1s; /*Al pasar el cursor sobre ellos aumentaran ligeramente su tamaño*/
+}
+
+/*Al igual que los otros iconos, aumenta ligeramente su tamaño al pasar sobre el*/
+.icono-youtube:hover {width: 110px;}
+
+
+/*HOLA MUNDO*/
+.menu-hola-mundo{
+	display: inline;
+	color: white;
+	/*background-image: url('img/image.jpg');*/
+	margin-left: 0px;
+	border-radius: 8px;
+	text-decoration: none;
+	border: 2px solid black;
+	background-color: gray;
+	width: 250px;
+	height: 60px;
+
+}
+.menu-hola-mundo:hover {
+	height: 400px;
+	box-shadow: 8px 10px 20px gray;
+}
+.titulo-menu-hola-mundo {
+	font: bold;
+	color: black;
+	font-size: 25px;
+	text-align: center;
+}
+.entradas-hola-mundo {
+	text-align: left;
+	padding: 0px;
+}
+.entradas-hola-mundo a{
+
+	text-align: left;
+	text-decoration: none;
+	color: #180333;
+	margin-bottom: 25px;
+}
+.entradas-hola-mundo:hover {
+	opacity: 1;
+	
+	
+}
